@@ -51,7 +51,7 @@ class UserController extends Controller
     {
         if ($user->id != 1) {
             $user->delete();
-            return back()->with('success', 'Delete user successfully!');
+            return back()->with('success',  $user->name . 'Delete user successfully!');
         } else {
             redirect()->route('user.index')->with('danger', $user->name . 'Delete user failed!');
         }
